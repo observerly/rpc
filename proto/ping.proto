@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "github.com/observerly/rpc/ping";
+
+package ping;
+
+// The ping service definition.
+service Ping {
+  // Sends a connected message
+  rpc IsConnected (PingRequest) returns (PongReply) {}
+}
+
+// The request message containing a connected message:
+message PingRequest {}
+
+// The response message containing the reply:
+message PongReply {
+  bool connected = 1;
+}
